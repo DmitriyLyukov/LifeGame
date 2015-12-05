@@ -1,0 +1,107 @@
+object Form1: TForm1
+  Left = 209
+  Height = 756
+  Top = 26
+  Width = 801
+  Caption = 'Form1'
+  ClientHeight = 756
+  ClientWidth = 801
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object dg: TDrawGrid
+    Left = 8
+    Height = 664
+    Top = 8
+    Width = 784
+    ColCount = 40
+    DefaultColWidth = 16
+    DefaultRowHeight = 16
+    ExtendedSelect = False
+    FixedCols = 0
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goRangeSelect, goSmoothScroll]
+    RowCount = 40
+    TabOrder = 0
+    OnDrawCell = dgDrawCell
+    OnSelectCell = dgSelectCell
+  end
+  object StartPause: TButton
+    Left = 696
+    Height = 25
+    Top = 681
+    Width = 88
+    Caption = 'Start'
+    Default = True
+    OnClick = StartPauseClick
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 608
+    Height = 25
+    Top = 681
+    Width = 75
+    Caption = 'Next'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 520
+    Height = 25
+    Top = 681
+    Width = 75
+    Caption = 'Clear'
+    OnClick = Button3Click
+    TabOrder = 3
+  end
+  object Path: TLabeledEdit
+    Left = 112
+    Height = 32
+    Top = 681
+    Width = 120
+    EditLabel.AnchorSideTop.Control = Path
+    EditLabel.AnchorSideTop.Side = asrCenter
+    EditLabel.AnchorSideRight.Control = Path
+    EditLabel.AnchorSideBottom.Control = Path
+    EditLabel.AnchorSideBottom.Side = asrBottom
+    EditLabel.Left = 14
+    EditLabel.Height = 22
+    EditLabel.Top = 686
+    EditLabel.Width = 95
+    EditLabel.Caption = 'Path to file:'
+    EditLabel.ParentColor = False
+    LabelPosition = lpLeft
+    TabOrder = 4
+    Text = 'input3.txt'
+    OnChange = PathChange
+    OnClick = PathClick
+  end
+  object LoadFile: TButton
+    Left = 240
+    Height = 33
+    Top = 680
+    Width = 75
+    Caption = 'Load'
+    OnClick = LoadFileClick
+    TabOrder = 5
+  end
+  object InTor: TCheckBox
+    Left = 432
+    Height = 24
+    Top = 682
+    Width = 69
+    Caption = 'In Tor'
+    TabOrder = 6
+  end
+  object tmr: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = tmrTimer
+    left = 688
+    top = 271
+  end
+  object SelectFile: TOpenDialog
+    Filter = 'All files|*.*'
+    left = 688
+    top = 336
+  end
+end
